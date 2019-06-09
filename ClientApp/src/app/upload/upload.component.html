@@ -1,0 +1,18 @@
+<br/>
+<h1>File Upload</h1>
+<input #file type="file" multiple (change)="upload(file.files)" />
+<br/>
+<li *ngFor="let currentFile of uploadFiles">
+  {{currentFile.name}} 
+</li>
+<br/>
+<span style="font-weight:bold;color:green;" *ngIf="progress > 0 && progress < 100">
+  {{progress}}%
+</span>
+<progress  style="font-weight:bold;color:green;"value="{{progress}}" max="100">
+</progress>
+
+<span style="font-weight:bold;color:green;" *ngIf="message">
+  {{message}}
+</span>
+
